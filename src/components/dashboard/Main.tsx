@@ -29,7 +29,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import { Eye, CheckCircle2, FileClock, MoreHorizontal } from "lucide-react";
+import { Eye, CheckCircle2, FileClock } from "lucide-react";
 
 // --- Mock Data ---
 
@@ -161,54 +161,52 @@ const StatusBadge = ({ status }: { status: string }) => (
 
 export default function Main() {
   return (
-    <div className="min-h-screen bg-gray-50/50 p-6 font-sans">
-      <div className="mx-auto max-w-[1400px] grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+    <div className="min-h-screen bg-gray-50/50 font-sans">
+      <div className="mx-auto w-full grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
         {/* --- Top Row: Welcome & Tasks (Spans 2 cols on XL) --- */}
         <Card className="col-span-1 md:col-span-2 xl:col-span-2 border-none shadow-sm">
-          <CardContent className="p-6">
-            <div className="flex items-center gap-4 mb-8">
-              <Avatar className="h-16 w-16 border-2 border-white shadow-sm">
+          <CardContent className="">
+            <div className="flex items-center gap-4 p-4 border-b border-white-600">
+              <Avatar className="h-16 w-16 border-2 border-gray-300 shadow-sm">
                 <AvatarImage src="https://i.pravatar.cc/150?u=mainUser" />
                 <AvatarFallback>RB</AvatarFallback>
               </Avatar>
-              <h1 className="text-2xl font-bold text-gray-800">
+              <h1 className="text-2xl font-semibold text-gray-800">
                 Good Morning, Robert!
               </h1>
             </div>
 
-            <div className="mb-2 text-lg font-semibold text-gray-700">
-              Assign Tasks:
-            </div>
+            <div className="p-4 flex flex-wrap gap-8 md:gap-24 pt-4">
+              <div className="mb-2 text-lg font-semibold text-gray-700">
+                Assign Tasks:
+              </div>
 
-            <div className="flex flex-wrap gap-8 md:gap-24 pt-4">
-              <TaskCircle
-                count={25}
-                label="Total Tasks"
-                colorClass="bg-orange-400"
-              />
-              <TaskCircle
-                count={15}
-                label="Production Tasks"
-                colorClass="bg-orange-400"
-              />
-              <TaskCircle
-                count={5}
-                label="Other Tasks"
-                colorClass="bg-orange-400"
-              />
+              <div className="flex flex-wrap gap-8 md:gap-24 pt-4">
+                <TaskCircle
+                  count={25}
+                  label="Total Tasks"
+                  colorClass="bg-orange-400"
+                />
+                <TaskCircle
+                  count={15}
+                  label="Production Tasks"
+                  colorClass="bg-orange-400"
+                />
+                <TaskCircle
+                  count={5}
+                  label="Other Tasks"
+                  colorClass="bg-orange-400"
+                />
+              </div>
             </div>
           </CardContent>
         </Card>
 
         {/* --- Top Row: Orders Today --- */}
         <Card className="col-span-1 border-none shadow-sm flex flex-col justify-center items-center py-6">
-          <CardHeader className="pb-2">
-            <CardTitle className="text-lg font-medium text-gray-700">
-              Orders Today
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="flex flex-col items-center">
-            <div className="mb-4 rounded-full bg-blue-100 p-3">
+          <CardContent className="flex flex-col gap-3 items-center">
+            <h1 className="text-lg font-medium text-gray-700">Orders Today</h1>
+            <div className="rounded-full bg-blue-100 p-3">
               <CheckCircle2 className="h-8 w-8 text-blue-500" />
             </div>
             <span className="text-3xl font-bold text-gray-900">82,902</span>
@@ -217,21 +215,17 @@ export default function Main() {
 
         {/* --- Top Row: Pending Orders --- */}
         <Card className="col-span-1 border-none shadow-sm flex flex-col justify-center items-center py-6">
-          <CardHeader className="pb-2">
-            <CardTitle className="text-lg font-medium text-gray-700">
-              Pending Orders
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="flex flex-col items-center">
-            <div className="mb-4 rounded-full bg-indigo-100 p-3">
-              <FileClock className="h-8 w-8 text-indigo-900" />
+          <CardContent className="flex flex-col gap-3 items-center">
+            <h1 className="text-lg font-medium text-gray-700">Orders Today</h1>
+            <div className="rounded-full bg-blue-100 p-3">
+              <CheckCircle2 className="h-8 w-8 text-blue-500" />
             </div>
-            <span className="text-3xl font-bold text-gray-900">45,782</span>
+            <span className="text-3xl font-bold text-gray-900">82,902</span>
           </CardContent>
         </Card>
 
         {/* --- Middle Row: Deliver Today (Spans 2 cols) --- */}
-        <Card className="col-span-1 md:col-span-2 border-none shadow-sm overflow-hidden">
+        <Card className="col-span-1 md:col-span-2 border-none shadow-sm overflow-hidden p-5">
           <CardHeader>
             <CardTitle className="text-lg font-bold text-gray-800">
               Need to Deliver Today
@@ -258,12 +252,9 @@ export default function Main() {
                   </TableHead>
                 </TableRow>
               </TableHeader>
-              <TableBody>
+              <TableBody className="">
                 {deliveryData.map((item, index) => (
-                  <TableRow
-                    key={index}
-                    className="border-gray-100 hover:bg-gray-50/50"
-                  >
+                  <TableRow key={index} className=" hover:bg-gray-50/50">
                     <TableCell className="font-medium text-gray-600">
                       {item.id}
                     </TableCell>
@@ -287,7 +278,7 @@ export default function Main() {
         </Card>
 
         {/* --- Middle Row: Order Trends Chart (Spans 2 cols) --- */}
-        <Card className="col-span-1 md:col-span-2 border-none shadow-sm">
+        <Card className="col-span-1 md:col-span-2 border-none shadow-sm p-5">
           <CardHeader className="flex flex-row items-center justify-between">
             <CardTitle className="text-lg font-bold text-gray-800">
               Order Trends
@@ -340,7 +331,7 @@ export default function Main() {
         </Card>
 
         {/* --- Bottom Row: Unread Messages (Spans 2 cols) --- */}
-        <Card className="col-span-1 md:col-span-2 border-none shadow-sm">
+        <Card className="col-span-1 md:col-span-2 border-none shadow-sm p-5">
           <CardHeader>
             <CardTitle className="text-lg font-bold text-gray-800">
               Unread Messages
@@ -381,7 +372,7 @@ export default function Main() {
         </Card>
 
         {/* --- Bottom Row: Recent Order (Spans 2 cols) --- */}
-        <Card className="col-span-1 md:col-span-2 border-none shadow-sm overflow-hidden">
+        <Card className="col-span-1 md:col-span-2 border-none shadow-sm overflow-hidden p-5">
           <CardHeader>
             <CardTitle className="text-lg font-bold text-gray-800">
               Recent Order
