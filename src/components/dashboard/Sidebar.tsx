@@ -55,6 +55,16 @@ export default function Sidebar() {
 
           <div className="py-6 px-6">
             <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/create-order"
+                  className="menu-item block text-center text-white text-[15px] font-medium cursor-pointer bg-primary-violet hover:bg-primary-violet/90 rounded-md py-2 transition-all duration-300"
+                >
+                  <span className="">
+                    <span className="text-xl">+</span> Create Order
+                  </span>
+                </Link>
+              </li>
               {navItems.map((item) => (
                 <li key={item.name}>
                   <Link
@@ -66,36 +76,6 @@ export default function Sidebar() {
                   </Link>
                 </li>
               ))}
-
-              {/* <li>
-                <Link
-                  href="#"
-                  className="menu-item text-green-800 text-[15px] font-medium flex items-center cursor-pointer bg-[#d9f3ea] hover:bg-[#d9f3ea] rounded-md px-3 py-3 transition-all duration-300"
-                >
-                  <MdOutlineDashboard size={20} className="mr-3" />
-
-                  <span>Dashboard</span>
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="menu-item text-slate-800 text-[15px] font-medium flex items-center cursor-pointer hover:bg-[#d9f3ea] rounded-md px-3 py-3 transition-all duration-300"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    className="w-[18px] h-[18px] mr-3"
-                    viewBox="0 0 60.123 60.123"
-                  >
-                    <path d="M57.124 51.893H16.92a3 3 0 1 1 0-6h40.203a3 3 0 0 1 .001 6zm0-18.831H16.92a3 3 0 1 1 0-6h40.203a3 3 0 0 1 .001 6zm0-18.831H16.92a3 3 0 1 1 0-6h40.203a3 3 0 0 1 .001 6z" />
-                    <circle cx="4.029" cy="11.463" r="4.029" />
-                    <circle cx="4.029" cy="30.062" r="4.029" />
-                    <circle cx="4.029" cy="48.661" r="4.029" />
-                  </svg>
-                  <span>Order List</span>
-                </a>
-              </li> */}
             </ul>
           </div>
         </div>
@@ -104,7 +84,7 @@ export default function Sidebar() {
       <button
         id="toggle-sidebar"
         onClick={() => setIsOpen(!isOpen)}
-        className="lg:hidden w-8 h-8 z-[100] fixed top-[36px] left-[10px] cursor-pointer bg-[#007bff] flex items-center justify-center rounded-full outline-0 transition-all duration-500"
+        className="lg:hidden w-8 h-8 z-100 fixed top-9 left-2.5 cursor-pointer bg-[#007bff] flex items-center justify-center rounded-full outline-0 transition-all duration-500"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
