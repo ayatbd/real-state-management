@@ -51,9 +51,9 @@ export default function Navbar() {
           </div>
 
           {/* Right Section */}
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-7">
             {/* Search Bar */}
-            <div className="relative w-[450px] max-w-full">
+            <div className="relative w-[499px] max-w-full">
               <Input
                 type="text"
                 placeholder="Search"
