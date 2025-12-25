@@ -1,7 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { Bell } from "lucide-react";
 import Link from "next/link";
-import React from "react";
 import { Input } from "../ui/input";
 import { CiSearch } from "react-icons/ci";
 

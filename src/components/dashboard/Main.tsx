@@ -161,7 +161,7 @@ const StatusBadge = ({ status }: { status: string }) => (
 
 export default function Main() {
   return (
-    <div className="min-h-screen bg-gray-50/50 font-sans">
+    <div className="min-h-screen font-sans p-6">
       <div className="mx-auto w-full grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
         {/* --- Top Row: Welcome & Tasks (Spans 2 cols on XL) --- */}
         <Card className="col-span-1 md:col-span-2 xl:col-span-2 border-none shadow-sm">

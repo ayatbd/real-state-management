@@ -35,10 +35,10 @@ export default function Sidebar() {
 
   return (
     <>
-      <nav id="sidebar" className="lg:min-w-[270px] w-max max-lg:min-w-8">
+      <nav id="sidebar" className="lg:min-w-[300px] w-max max-lg:min-w-8">
         <div
           id="sidebar-collapse-menu"
-          className={`bg-white shadow-lg h-screen fixed top-0 left-0 overflow-auto z-99 lg:min-w-[250px] lg:w-max transition-all duration-500
+          className={`bg-white shadow-lg h-screen fixed top-0 left-0 overflow-auto z-99 lg:min-w-[300px] lg:w-max transition-all duration-500
           ${isOpen ? "w-[250px] visible" : "max-lg:w-0 max-lg:invisible"}`}
         >
           <div className="sticky top-0 bg-white z-100 mt-7">
