@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Search, ChevronLeft, ArrowRight, ArrowLeft } from "lucide-react";
+import { Search, ArrowRight, ArrowLeft } from "lucide-react";
 import Image from "next/image";
 
 // --- Mock Data ---
@@ -213,10 +213,10 @@ const PackageCard = ({ data }: { data: Package }) => {
 
 // --- Main Page ---
 
-export default function ServicesPage() {
+export default function PackagesPage() {
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-4 md:px-8 lg:px-12 font-sans">
-      <div className="max-w-7xl mx-auto">
+      <div className="">
         {/* Stepper Navigation */}
         <Stepper />
 

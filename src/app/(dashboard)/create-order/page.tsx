@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import Image from "next/image";
+import Link from "next/link";
 
 const companiesData = [
   {
@@ -118,9 +119,11 @@ const CreateOrderPage = () => {
           </CardContent>
 
           <CardFooter className="p-6 pt-2">
-            <Button className="w-full h-12 text-lg font-normal bg-indigo-900 hover:bg-indigo-800 text-white rounded-md shadow-sm transition-colors">
-              Continue
-            </Button>
+            <button className="w-full h-12 text-lg font-normal bg-indigo-900 hover:bg-indigo-800 text-white rounded-md shadow-sm transition-colors">
+              <Link className="block" href="/packages">
+                Continue
+              </Link>
+            </button>
           </CardFooter>
         </Card>
       </div>
