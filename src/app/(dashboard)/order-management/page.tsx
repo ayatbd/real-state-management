@@ -9,6 +9,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 // --- Types & Mock Data ---
 
@@ -271,9 +272,11 @@ export default function OrderManagement() {
                   <PaymentBadge status={order.payment} />
                 </td>
                 <td className="px-6 py-4 text-center">
-                  <button className="bg-[#1e1b4b] p-1.5 rounded text-white hover:bg-[#2d2a6e] transition-colors">
-                    <Eye className="w-4 h-4" />
-                  </button>
+                  <Link href={`/order-management/1`}>
+                    <button className="bg-[#1e1b4b] p-1.5 rounded text-white hover:bg-[#2d2a6e] transition-colors">
+                      <Eye className="w-4 h-4" />
+                    </button>
+                  </Link>
                 </td>
               </tr>
             ))}

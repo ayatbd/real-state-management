@@ -10,7 +10,7 @@ import { RiDraftLine } from "react-icons/ri";
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navItems = [
+  const topNavItems = [
     {
       name: "Dashboard",
       href: "/",
@@ -18,7 +18,7 @@ export default function Sidebar() {
     },
     {
       name: "Message/Mail",
-      href: "/message",
+      href: "/message-mail",
       icon: <IoMailOutline size={20} />,
     },
     {
@@ -29,6 +29,29 @@ export default function Sidebar() {
     {
       name: "Order Management",
       href: "/order-management",
+      icon: <RiDraftLine size={20} />,
+    },
+  ];
+
+  const catalogNavItems = [
+    {
+      name: "Services",
+      href: "/services",
+      icon: <MdOutlineDashboard size={20} />,
+    },
+    {
+      name: "Packages",
+      href: "/sidebar-packages",
+      icon: <IoMailOutline size={20} />,
+    },
+    {
+      name: "Service Categories",
+      href: "/service-categories",
+      icon: <MdWorkOutline size={20} />,
+    },
+    {
+      name: "Pricing Groups",
+      href: "/pricing-groups",
       icon: <RiDraftLine size={20} />,
     },
   ];
@@ -58,18 +81,35 @@ export default function Sidebar() {
               <li>
                 <Link
                   href="/create-order"
-                  className="menu-item block text-center text-white text-[15px] font-medium cursor-pointer bg-primary-violet hover:bg-primary-violet/90 rounded-md py-2 transition-all duration-300"
+                  className="menu-item block text-center text-white text-[16px] font-medium cursor-pointer bg-primary-violet hover:bg-primary-violet/90 rounded-md py-2 transition-all duration-300"
                 >
                   <span className="">
                     <span className="text-xl">+</span> Create Order
                   </span>
                 </Link>
               </li>
-              {navItems.map((item) => (
+              {topNavItems.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
                     className="menu-item text-slate-800 text-[15px] font-medium flex items-center gap-3 cursor-pointer hover:bg-[#eae9f0] rounded-md px-3 py-3 transition-all duration-300"
+                  >
+                    {item.icon}
+                    <span>{item.name}</span>
+                  </Link>
+                </li>
+              ))}
+              {/* --------------------------- */}
+              <li>
+                <span className="menu-item block font-semibold text-start text-[18px] text-[#333333] rounded-md py-2 px-3 transition-all duration-300">
+                  Catalogue
+                </span>
+              </li>
+              {catalogNavItems.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="menu-item text-slate-800 text-[16px] font-medium flex items-center gap-3 cursor-pointer hover:bg-[#eae9f0] rounded-md px-3 py-3 transition-all duration-300"
                   >
                     {item.icon}
                     <span>{item.name}</span>
