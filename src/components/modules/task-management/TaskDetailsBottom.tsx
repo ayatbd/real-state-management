@@ -126,7 +126,7 @@ const ServiceRow = ({ service }: { service: ServiceItem }) => {
       </div>
 
       {/* Stepper (takes remaining width) */}
-      <div className="flex-grow flex justify-end">
+      <div className="grow flex justify-end">
         <div className="w-full md:w-auto md:min-w-[350px] border border-slate-100 rounded-lg p-2 bg-slate-50/50">
           <StatusStepper status={service.status} />
         </div>
@@ -209,10 +209,10 @@ export default function TaskDetailsBottom() {
 
         <div className="border border-slate-200 rounded-xl p-6 bg-white shadow-sm h-[400px] flex flex-col relative">
           {/* Chat Area */}
-          <div className="flex-grow space-y-6 overflow-y-auto mb-6 px-2">
+          <div className="grow space-y-6 overflow-y-auto mb-6 px-2">
             {/* Incoming Message */}
             <div className="flex items-start gap-3 max-w-[80%]">
-              <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border border-slate-200">
+              <div className="w-10 h-10 rounded-full overflow-hidden shrink-0 border border-slate-200">
                 <Image
                   src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop"
                   alt="Sender"
@@ -271,7 +271,7 @@ export default function TaskDetailsBottom() {
           {uploadedImages.map((src, index) => (
             <div
               key={index}
-              className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-sm group"
+              className="relative aspect-4/3 rounded-xl overflow-hidden shadow-sm group"
             >
               <Image
                 src={src}

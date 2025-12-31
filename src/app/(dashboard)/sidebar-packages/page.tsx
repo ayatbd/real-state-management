@@ -30,10 +30,11 @@ import {
 } from "@/components/ui/pagination";
 import { packages } from "@/components/data/ArrayDatas";
 import Link from "next/link";
+import ViewDetails from "@/components/modules/sidebar-packages/ViewDetails";
 
 // Using the mock data defined above
 
-export default function PackagesPage() {
+export default function SidebarPackagesPage() {
   return (
     <div className="min-h-screen bg-white p-8">
       {/* Header Section */}
@@ -99,12 +100,7 @@ export default function PackagesPage() {
                 {/* Details Icon */}
                 <TableCell className="py-4 text-center">
                   <div className="flex justify-center">
-                    <Button
-                      size="icon"
-                      className="bg-[#2A206A] hover:bg-[#1e174d] w-9 h-8"
-                    >
-                      <Eye className="w-4 h-4 text-white" />
-                    </Button>
+                    <ViewDetails />
                   </div>
                 </TableCell>
 
