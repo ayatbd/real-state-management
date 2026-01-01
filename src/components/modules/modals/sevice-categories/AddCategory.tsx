@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Pencil, Plus } from "lucide-react";
+import { Plus } from "lucide-react";
 
 const AddCategory = () => {
   return (

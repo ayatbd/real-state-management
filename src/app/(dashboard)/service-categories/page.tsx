@@ -13,7 +13,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import Link from "next/link";
-import AddNewPackage from "@/components/modules/modals/sidebar-packages/AddNewPackage";
 import Swal from "sweetalert2";
 import EditCategory from "@/components/modules/modals/sevice-categories/EditCategory";
 import AddCategory from "@/components/modules/modals/sevice-categories/AddCategory";
