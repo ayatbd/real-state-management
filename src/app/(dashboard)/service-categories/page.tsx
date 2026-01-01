@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, Pencil, Search, Trash2 } from "lucide-react";
+import { ArrowLeft, Search, Trash2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,6 +16,7 @@ import Link from "next/link";
 import AddNewPackage from "@/components/modules/modals/sidebar-packages/AddNewPackage";
 import Swal from "sweetalert2";
 import EditCategory from "@/components/modules/modals/sevice-categories/EditCategory";
+import AddCategory from "@/components/modules/modals/sevice-categories/AddCategory";
 // Using the mock data defined above
 const categories = [
   { id: "01", name: "Photos" },
@@ -61,7 +62,7 @@ export default function SidebarPackagesPage() {
       </div>
       {/* Action Button */}
       <div className="mb-6">
-        <AddNewPackage />
+        <AddCategory />
       </div>
       <div className="w-full bg-white p-4 rounded-lg">
         <Table className="table-fixed w-full">

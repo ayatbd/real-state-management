@@ -9,15 +9,16 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Pencil } from "lucide-react";
+import { Pencil, Plus } from "lucide-react";
 
-const EditCategory = () => {
+const AddCategory = () => {
   return (
     <Dialog>
       {/* 1. The Trigger Button */}
       <DialogTrigger asChild>
-        <Button size="icon" className="bg-[#2A206A] hover:bg-[#1e174d] w-9 h-8">
-          <Pencil className="w-4 h-4 text-white" />
+        <Button className="cursor-pointer! bg-[#2A206A] hover:bg-[#1e174d] text-white px-6 py-5 rounded-md flex gap-2">
+          <Plus className="w-5 h-5" />
+          New Category
         </Button>
       </DialogTrigger>
 
@@ -73,4 +74,4 @@ const EditCategory = () => {
   );
 };
 
-export default EditCategory;
+export default AddCategory;
