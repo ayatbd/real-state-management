@@ -1,10 +1,25 @@
+"use client";
+
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
-import { Bell } from "lucide-react";
+import { Bell, MoreHorizontalIcon } from "lucide-react";
 import Link from "next/link";
 import { Input } from "../ui/input";
 import { CiSearch } from "react-icons/ci";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuTrigger,
+} from "../ui/dropdown-menu";
+import { Button } from "../ui/button";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [showNewDialog, setShowNewDialog] = useState(false);
+  const [showShareDialog, setShowShareDialog] = useState(false);
+  console.log(showNewDialog, showShareDialog);
   return (
     <header className="z-50 bg-[#f7f6f9] sticky top-0">
       <div className="flex flex-wrap items-center w-full relative tracking-wide">
@@ -70,15 +85,26 @@ export default function Navbar() {
 
             {/* Profile */}
             <div className="flex items-center gap-3 cursor-pointer">
-              <Avatar>
-                <AvatarImage
-                  src="/images/dashboard/nav/Ellipse25.png"
-                  alt="User"
-                />
-                <AvatarFallback>RS</AvatarFallback>
-              </Avatar>
               <span className="text-[#333333] font-medium text-[18px]">
-                Robert Smith
+                <DropdownMenu modal={false}>
+                  <DropdownMenuTrigger asChild>
+                    <Avatar>
+                      <AvatarImage
+                        src="/images/dashboard/nav/Ellipse25.png"
+                        alt="User"
+                      />
+                      <AvatarFallback>RS</AvatarFallback>
+                    </Avatar>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-40" align="end">
+                    <DropdownMenuLabel>File Actions</DropdownMenuLabel>
+                    <DropdownMenuGroup>
+                      <DropdownMenuItem onSelect={() => setShowNewDialog(true)}>
+                        Log Out
+                      </DropdownMenuItem>
+                    </DropdownMenuGroup>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </span>
             </div>
           </div>

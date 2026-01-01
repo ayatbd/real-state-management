@@ -6,6 +6,7 @@ import Image from "next/image";
 import { MdOutlineDashboard, MdWorkOutline } from "react-icons/md";
 import { IoMailOutline } from "react-icons/io5";
 import { RiDraftLine } from "react-icons/ri";
+import { Settings, UserRoundPen, UsersRound } from "lucide-react";
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,6 +57,37 @@ export default function Sidebar() {
     },
   ];
 
+  const accoutsNavItems = [
+    {
+      name: "Client Management",
+      href: "/client-management",
+      icon: <UserRoundPen size={20} />,
+    },
+    {
+      name: "Team-Members",
+      href: "/team-members",
+      icon: <UsersRound size={20} />,
+    },
+  ];
+
+  const buisnessNavItems = [
+    {
+      name: "Report",
+      href: "/report",
+      icon: <UserRoundPen size={20} />,
+    },
+    {
+      name: "Invoice Order",
+      href: "/invoice-order",
+      icon: <UsersRound size={20} />,
+    },
+    {
+      name: "Settings",
+      href: "/settings",
+      icon: <Settings size={20} />,
+    },
+  ];
+
   return (
     <>
       <nav id="sidebar" className="lg:min-w-[300px] w-max max-lg:min-w-8">
@@ -100,12 +132,50 @@ export default function Sidebar() {
                 </li>
               ))}
               {/* --------------------------- */}
+              {/* Catalogue */}
               <li>
                 <span className="menu-item block font-semibold text-start text-[18px] text-[#333333] rounded-md py-2 px-3 transition-all duration-300">
                   Catalogue
                 </span>
               </li>
               {catalogNavItems.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="menu-item text-slate-800 text-[16px] font-medium flex items-center gap-3 cursor-pointer hover:bg-[#eae9f0] rounded-md px-3 py-3 transition-all duration-300"
+                  >
+                    {item.icon}
+                    <span>{item.name}</span>
+                  </Link>
+                </li>
+              ))}
+              {/* --------------------------- */}
+              {/* Accounts */}
+              <li>
+                <span className="menu-item block font-semibold text-start text-[18px] text-[#333333] rounded-md py-2 px-3 transition-all duration-300">
+                  Accounts
+                </span>
+              </li>
+              {accoutsNavItems.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="menu-item text-slate-800 text-[16px] font-medium flex items-center gap-3 cursor-pointer hover:bg-[#eae9f0] rounded-md px-3 py-3 transition-all duration-300"
+                  >
+                    {item.icon}
+                    <span>{item.name}</span>
+                  </Link>
+                </li>
+              ))}
+
+              {/* --------------------------- */}
+              {/* Business */}
+              <li>
+                <span className="menu-item block font-semibold text-start text-[18px] text-[#333333] rounded-md py-2 px-3 transition-all duration-300">
+                  Business
+                </span>
+              </li>
+              {buisnessNavItems.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
