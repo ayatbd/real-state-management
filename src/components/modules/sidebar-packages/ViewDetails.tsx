@@ -43,7 +43,6 @@ const ViewDetails = () => {
             Package Details
           </DialogTitle>
           <DialogClose className="absolute right-0 top-0 opacity-70 hover:opacity-100 transition-opacity">
-            <X className="h-6 w-6 text-slate-500" />
             <span className="sr-only">Close</span>
           </DialogClose>
         </DialogHeader>

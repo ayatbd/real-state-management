@@ -31,6 +31,7 @@ import {
 import { packages } from "@/components/data/ArrayDatas";
 import Link from "next/link";
 import ViewDetails from "@/components/modules/sidebar-packages/ViewDetails";
+import AddNewPackage from "@/components/modules/sidebar-packages/AddNewPackage";
 
 // Using the mock data defined above
 
@@ -56,10 +57,7 @@ export default function SidebarPackagesPage() {
 
       {/* Action Button */}
       <div className="mb-6">
-        <Button className="cursor-pointer! bg-[#2A206A] hover:bg-[#1e174d] text-white px-6 py-5 rounded-md flex gap-2">
-          <Plus className="w-5 h-5" />
-          New Package
-        </Button>
+        <AddNewPackage />
       </div>
 
       {/* Table Section */}
