@@ -1,8 +1,8 @@
+"use client";
+
 import {
   ArrowLeft,
-  Plus,
   Search,
-  Eye,
   Pencil,
   Trash2,
   ChevronLeft,
@@ -30,12 +30,28 @@ import {
 } from "@/components/ui/pagination";
 import { packages } from "@/components/data/ArrayDatas";
 import Link from "next/link";
-import ViewDetails from "@/components/modules/sidebar-packages/ViewDetails";
-import AddNewPackage from "@/components/modules/sidebar-packages/AddNewPackage";
-
+import ViewDetails from "@/components/modules/modals/sidebar-packages/ViewDetails";
+import AddNewPackage from "@/components/modules/modals/sidebar-packages/AddNewPackage";
+import EditPackage from "@/components/modules/modals/sidebar-packages/EditPackage";
+import Swal from "sweetalert2";
 // Using the mock data defined above
 
 export default function SidebarPackagesPage() {
+  const handleDelete = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      }
+    });
+  };
   return (
     <div className="min-h-screen bg-white p-8">
       {/* Header Section */}
@@ -105,13 +121,9 @@ export default function SidebarPackagesPage() {
                 {/* Action Icons */}
                 <TableCell className="py-4">
                   <div className="flex justify-center gap-2">
+                    <EditPackage />
                     <Button
-                      size="icon"
-                      className="bg-[#2A206A] hover:bg-[#1e174d] w-9 h-8"
-                    >
-                      <Pencil className="w-4 h-4 text-white" />
-                    </Button>
-                    <Button
+                      onClick={handleDelete}
                       size="icon"
                       className="bg-[#E11D48] hover:bg-[#be123c] w-9 h-8"
                     >

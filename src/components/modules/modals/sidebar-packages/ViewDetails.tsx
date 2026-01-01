@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/dialog";
 import { DialogTrigger } from "@radix-ui/react-dialog";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 // interface PackageDetailsModalProps {
 //   isOpen: boolean;
@@ -93,7 +94,9 @@ const ViewDetails = () => {
                   key={index}
                   className="aspect-square rounded-xl overflow-hidden border border-slate-200 shadow-sm"
                 >
-                  <img
+                  <Image
+                    width={120}
+                    height={120}
                     src={src}
                     alt={`Real estate sample ${index + 1}`}
                     className="w-full h-full object-cover"
