@@ -6,7 +6,14 @@ import Image from "next/image";
 import { MdOutlineDashboard, MdWorkOutline } from "react-icons/md";
 import { IoMailOutline } from "react-icons/io5";
 import { RiDraftLine } from "react-icons/ri";
-import { Settings, UserRoundPen, UsersRound } from "lucide-react";
+import {
+  ClipboardMinus,
+  ListOrdered,
+  LogOut,
+  Settings,
+  UserRoundPen,
+  UsersRound,
+} from "lucide-react";
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -74,12 +81,12 @@ export default function Sidebar() {
     {
       name: "Report",
       href: "/report",
-      icon: <UserRoundPen size={20} />,
+      icon: <ClipboardMinus size={20} />,
     },
     {
       name: "Invoice Order",
       href: "/invoice-order",
-      icon: <UsersRound size={20} />,
+      icon: <ListOrdered size={20} />,
     },
     {
       name: "Settings",
@@ -87,6 +94,8 @@ export default function Sidebar() {
       icon: <Settings size={20} />,
     },
   ];
+
+  const handleLogout = () => {};
 
   return (
     <>
@@ -186,6 +195,17 @@ export default function Sidebar() {
                   </Link>
                 </li>
               ))}
+              {/* --------------------------- */}
+              {/* Logout */}
+              <li>
+                <button
+                  onClick={handleLogout}
+                  className="menu-item text-slate-800 text-[16px] font-medium flex items-center gap-3 cursor-pointer hover:bg-[#eae9f0] rounded-md px-3 py-3 transition-all duration-300"
+                >
+                  <LogOut size={20} />
+                  <span>Log Out</span>
+                </button>
+              </li>
             </ul>
           </div>
         </div>
