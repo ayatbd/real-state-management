@@ -26,7 +26,7 @@ export default function Sidebar() {
     },
     {
       name: "Message/Mail",
-      href: "/message-mail",
+      href: "/message-mail/inbox",
       icon: <IoMailOutline size={20} />,
     },
     {
@@ -133,7 +133,7 @@ export default function Sidebar() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="menu-item text-slate-800 text-[15px] font-medium flex items-center gap-3 cursor-pointer hover:bg-[#eae9f0] rounded-md px-3 py-3 transition-all duration-300"
+                    className="menu-item text-slate-800 text-[15px] font-medium flex items-center gap-3 cursor-pointer hover:bg-[#eae9f0] active:bg-[#eae9f0] focus:bg-[#eae9f0] rounded-md px-3 py-3 transition-all duration-300"
                   >
                     {item.icon}
                     <span>{item.name}</span>
@@ -151,7 +151,7 @@ export default function Sidebar() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="menu-item text-slate-800 text-[16px] font-medium flex items-center gap-3 cursor-pointer hover:bg-[#eae9f0] rounded-md px-3 py-3 transition-all duration-300"
+                    className="menu-item text-slate-800 text-[16px] font-medium flex items-center gap-3 cursor-pointer hover:bg-[#eae9f0] active:bg-[#eae9f0] focus:bg-[#eae9f0] rounded-md px-3 py-3 transition-all duration-300"
                   >
                     {item.icon}
                     <span>{item.name}</span>
@@ -169,7 +169,7 @@ export default function Sidebar() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="menu-item text-slate-800 text-[16px] font-medium flex items-center gap-3 cursor-pointer hover:bg-[#eae9f0] rounded-md px-3 py-3 transition-all duration-300"
+                    className="menu-item text-slate-800 text-[16px] font-medium flex items-center gap-3 cursor-pointer hover:bg-[#eae9f0] active:bg-[#eae9f0] focus:bg-[#eae9f0] rounded-md px-3 py-3 transition-all duration-300"
                   >
                     {item.icon}
                     <span>{item.name}</span>
@@ -188,7 +188,7 @@ export default function Sidebar() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="menu-item text-slate-800 text-[16px] font-medium flex items-center gap-3 cursor-pointer hover:bg-[#eae9f0] rounded-md px-3 py-3 transition-all duration-300"
+                    className="menu-item text-slate-800 text-[16px] font-medium flex items-center gap-3 cursor-pointer hover:bg-[#eae9f0] active:bg-[#eae9f0] focus:bg-[#eae9f0] rounded-md px-3 py-3 transition-all duration-300"
                   >
                     {item.icon}
                     <span>{item.name}</span>
