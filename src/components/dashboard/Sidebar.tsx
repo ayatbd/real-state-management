@@ -90,7 +90,7 @@ export default function Sidebar() {
     },
     {
       name: "Settings",
-      href: "/settings",
+      href: "/settings/catalogue",
       icon: <Settings size={20} />,
     },
   ];
